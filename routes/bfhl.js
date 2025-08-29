@@ -2,10 +2,19 @@ const express = require('express');
 const router = express.Router();
 const processData = require('../utils/processData');
 
-const FULL_NAME = 'john_doe';
-const DOB = '17091999';
-const EMAIL = 'john@xyz.com';
-const ROLL_NUMBER = 'ABCD123';
+
+const FULL_NAME = 'varnit singh';
+const EMAIL = 'varnit.singh2022@vitstudent.ac.in';
+const ROLL_NUMBER = '22BIT0221';
+
+function getUserId() {
+  const name = FULL_NAME.trim().replace(/\s+/g, '_').toLowerCase();
+  const now = new Date();
+  const dd = String(now.getDate()).padStart(2, '0');
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const yyyy = now.getFullYear();
+  return `${name}_${dd}${mm}${yyyy}`;
+}
 
 router.post('/', (req, res) => {
   try {
@@ -19,7 +28,7 @@ router.post('/', (req, res) => {
     const result = processData(data);
     res.status(200).json({
       is_success: true,
-      user_id: `${FULL_NAME}_${DOB}`,
+      user_id: getUserId(),
       email: EMAIL,
       roll_number: ROLL_NUMBER,
       ...result

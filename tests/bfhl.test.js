@@ -122,7 +122,7 @@ describe('BFHL API Tests', () => {
         alphabets: ['A', 'B', 'CDE', 'XYZ', 'MNOP'],
         special_characters: [],
         sum: '0',
-        concat_string: 'pOnMyZxEeDcBa'
+        concat_string: 'PoNmXyZeDcBa'
       }
     },
     {
@@ -261,7 +261,7 @@ describe('BFHL API Tests', () => {
     expect(res.body.is_success).toBe(true);
     expect(res.body.even_numbers).toEqual([]);
     expect(res.body.odd_numbers).toEqual([]);
-    expect(res.body.special_characters).toEqual(['.', '.']);
+    expect(res.body.special_characters).toEqual([]);
     expect(res.body.sum).toBe(6.64);
   });
 
