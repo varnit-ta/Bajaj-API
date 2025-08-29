@@ -24,7 +24,7 @@ function processData(data) {
     } 
     else {
       for (const char of item) {
-        if (!/[a-zA-Z0-9]/.test(char)) {
+        if (!/[a-zA-Z0-9]/.test(char) && char.trim() !== '') {
           special_characters.push(char);
         }
       }
