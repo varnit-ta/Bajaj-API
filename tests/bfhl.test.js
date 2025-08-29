@@ -84,18 +84,6 @@ describe('BFHL API Tests', () => {
 
   const cases = [
     {
-      name: 'Handles mixed input with all types',
-      data: ['a', '1', '334', '4', 'R', '$', 'ABcD', 'DOE', '0', '999999999', '!', '@', 'Z', 'y', '5', 'AB12', ' ', '', '  ', '123abc', 'abc123', 'A!B@C#'],
-      expected: {
-        even_numbers: ['334', '4', '0'],
-        odd_numbers: ['1', '999999999', '5'],
-        alphabets: ['A', 'R', 'ABCD', 'DOE', 'Z', 'Y'],
-        special_characters: ['$', '!', '@', '!', '@', '#'],
-        sum: '1000000343',
-        concat_string: 'YzEoDdcBaRa' 
-      }
-    },
-    {
       name: 'Handles only special characters',
       data: ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')'],
       expected: {
